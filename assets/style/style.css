@@ -80,16 +80,94 @@ body.dark .theme-toggle {
 }
 
 /* ======== Hero ======== */
-.hero {
-  height: 100vh;
+/* Hero */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Hela viewport height */
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Täcker hela hero-sektionen */
+  object-position: center;
+  animation: zoomIn 4s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* text ovanpå bild och overlay */
+  max-width: 800px;
+  padding: 20px;
   text-align: center;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: #fff;
-  padding: 2rem;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+}
+
+.hero-content p {
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #f0f0f0;
 }
 
 /* ======== Sektioner ======== */
