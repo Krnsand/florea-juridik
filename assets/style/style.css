@@ -181,23 +181,29 @@ section {
 }
 
 #about {
-  background: #e0f7fa;
+  background: #000000;
+  color: #ffffff;
 }
 #services {
-  background: #ffe0b2;
+  background: #ffffff;
+  color: #000000;
 }
 #contact {
-  background: #dcedc8;
+  background: #000000;
+  color: #ffffff;
 }
 
 body.dark #about {
-  background: #004d40;
+  background: #ffffff;
+  color: #000000;
 }
 body.dark #services {
-  background: #bf360c;
+  background: #000000;
+  color: #ffffff;
 }
 body.dark #contact {
-  background: #33691e;
+  background: #ffffff;
+  color: #000000;
 }
 
 /* ======== Footer ======== */
@@ -215,4 +221,70 @@ body.dark footer {
 /* Fix för sticky header spacing */
 .spacer {
   height: 70px;
+}
+
+/* ======== Hamburgermeny ======== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  margin-left: 1rem;
+  z-index: 1001; /* över menyn */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark .hamburger span {
+  background: #fff;
+}
+
+/* När menyn är öppen */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+  }
+
+  body.dark nav ul {
+    background: #1e1e1e;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex; /* synlig på mobil */
+  }
 }

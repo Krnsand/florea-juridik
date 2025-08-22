@@ -30,3 +30,20 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// Hamburgermeny toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("nav ul");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Stäng menyn när man klickar på en länk
+document.querySelectorAll("nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
+});
