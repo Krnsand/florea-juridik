@@ -1,31 +1,17 @@
-/* ======== Reset och grund ======== */
-
+/* ======== Reset ======== */
 html {
   scroll-behavior: smooth;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
   background: #f5f5f5;
   color: #333;
-}
-
-body.dark {
-  background: #121212;
-  color: #f5f5f5;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* ======== Header ======== */
@@ -34,196 +20,46 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
+  min-height: 70px; /* se till att headern alltid har höjd */
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  background-color: #fff;
+  justify-content: center; /* behåll för desktop */
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-body.dark header {
-  background: #1e1e1e;
+header .logo {
+  position: absolute;
+  left: 2rem;
+  font-weight: bold;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 nav a {
   font-weight: bold;
   cursor: pointer;
-}
-
-/* Aktiv meny-länk */
-nav a.active {
-  color: #0077ff;
-  border-bottom: 2px solid #0077ff;
-}
-
-/* Light/Dark switch */
-.theme-toggle {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  background: #333;
-  color: #fff;
-}
-
-body.dark .theme-toggle {
-  background: #f5f5f5;
-  color: #333;
-}
-
-/* ======== Hero ======== */
-/* Hero */
-#hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  animation: zoomIn 4s ease-out forwards;
-}
-
-@keyframes zoomIn {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2; /* text ovanpå bild och overlay */
-  max-width: 800px;
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-
-.hero-content h1 {
-  font-size: 40px;
-  font-weight: 400;
-  text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 30px;
-  }
-}
-
-.hero-content p {
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-weight: 400;
-}
-
-.hero-btn {
-  display: inline-block;
-  background-color: #fff;
-  color: #000;
-  font-weight: bold;
-  padding: 12px 30px;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
 }
 
-.hero-btn:hover {
-  background-color: #f0f0f0;
+nav a:link,
+nav a:visited {
+  color: #333; /* standardfärg för länkar */
+  text-decoration: none;
 }
 
-/* ======== Sektioner ======== */
-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+nav a.active {
+  color: #000000; /* färg för aktiv länk */
+  border-bottom: 2px solid #000000;
 }
 
-#about {
-  background: #000000;
-  color: #ffffff;
-}
-#services {
-  background: #ffffff;
-  color: #000000;
-}
-#contact {
-  background: #000000;
-  color: #ffffff;
-}
-
-body.dark #about {
-  background: #ffffff;
-  color: #000000;
-}
-body.dark #services {
-  background: #000000;
-  color: #ffffff;
-}
-body.dark #contact {
-  background: #ffffff;
-  color: #000000;
-}
-
-/* ======== Footer ======== */
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-body.dark footer {
-  background: #111;
-}
-
-/* Fix för sticky header spacing */
-.spacer {
-  height: 70px;
-}
-
-/* ======== Hamburgermeny ======== */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -231,8 +67,8 @@ body.dark footer {
   width: 28px;
   height: 22px;
   cursor: pointer;
-  margin-left: 1rem;
-  z-index: 1001; /* över menyn */
+  position: absolute;
+  right: 2rem;
 }
 
 .hamburger span {
@@ -244,47 +80,158 @@ body.dark footer {
   transition: all 0.3s ease-in-out;
 }
 
-body.dark .hamburger span {
-  background: #fff;
-}
-
-/* När menyn är öppen */
+/* Hamburger active (X) */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ======== Hero ======== */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomIn 4s ease-out forwards;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
+  margin-bottom: 20px;
+}
+.hero-content p {
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.hero-btn:hover {
+  background: #f0f0f0;
+}
+
+/* ======== Sektioner ======== */
+section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#about {
+  background: #000;
+  color: #fff;
+}
+#services {
+  background: #fff;
+  color: #000;
+}
+#contact {
+  background: #000;
+  color: #fff;
+}
+
+/* ======== Footer ======== */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Sticky header spacing */
+.spacer {
+  height: 70px;
 }
 
 @media (max-width: 768px) {
+  .spacer {
+    height: 70px; /* samma som header */
+  }
+}
+
+/* ======== Responsiv ======== */
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    min-height: 70px;
+  }
+
   nav ul {
     position: absolute;
     top: 70px;
     right: 0;
-    background: #fff;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center; /* centrerar vertikalt i menyn */
+    align-items: center;
+    background-color: #fff;
+    width: 200px;
+    padding: 2rem 0;
     gap: 1rem;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
   }
-
-  body.dark nav ul {
-    background: #1e1e1e;
-  }
-
   nav ul.active {
     display: flex;
   }
-
   .hamburger {
-    display: flex; /* synlig på mobil */
+    display: flex;
   }
 }
