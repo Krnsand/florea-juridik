@@ -84,7 +84,7 @@ body.dark .theme-toggle {
 #hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Hela viewport height */
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -103,7 +103,7 @@ body.dark .theme-toggle {
 .hero-bg img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Täcker hela hero-sektionen */
+  object-fit: cover;
   object-position: center;
   animation: zoomIn 4s ease-out forwards;
 }
