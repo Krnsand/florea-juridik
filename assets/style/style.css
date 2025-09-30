@@ -331,6 +331,13 @@ footer {
     display: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    /* Only bottom-left should be rounded, others sharp */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    overflow: hidden; /* ensure rounded corner clips contents */
+    border: 1px solid rgba(0,0,0,0.06);
   }
   nav ul.active {
     display: flex;
