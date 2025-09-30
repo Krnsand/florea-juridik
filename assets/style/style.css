@@ -8,20 +8,29 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   line-height: 1.6;
   background: #f5f5f5;
   color: #333;
 }
 
 /* Serif headings for a trustworthy, legal feel */
-h1,
+h1 {
+  font-weight: 100;
+  font-family: 'GFS Didot', Georgia, 'Times New Roman', serif;
+  font-size: larger;
+} 
+
+h3 {
+  font-weight: 400;
+  font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
 h2,
-h3,
 h4,
 h5,
 h6 {
-  font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+  font-family: 'GFS Didot', Georgia, 'Times New Roman', serif;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -50,7 +59,7 @@ header .logo {
 
 /* Logo image sizing */
 header .logo img {
-  height: 80px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -59,7 +68,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Montserrat', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 /* Center the nav list within the nav/header */
@@ -122,7 +131,7 @@ nav a.active {
 #hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,8 +178,8 @@ nav a.active {
   color: white;
 }
 .hero-content h1 {
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 55px;
+  font-weight: 400;
   text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
   margin-bottom: 20px;
 }
@@ -193,7 +202,7 @@ nav a.active {
 
 /* ======== Sektioner ======== */
 section {
-  min-height: 80vh;
+  min-height: 50vh;
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
@@ -203,9 +212,9 @@ section {
 #about .section-inner,
 #services .section-inner,
 #contact .section-inner {
-  max-width: 900px;
+  max-width: 600px;
   width: 100%;
-  margin: 0 auto; /* center the block in the section */
+  margin: 0; /* base, overridden per-section below */
   text-align: left; /* left-align text inside */
   display: grid;
   gap: 1rem; /* space between title and text */
@@ -217,16 +226,34 @@ section {
   margin-bottom: 0.5rem;
 }
 #about {
-  background: #0e0e0e;
+  background: #242424;
   color: #f9f9f9;
+  justify-content: flex-start; /* align card to the left */
 }
+#about .section-inner { margin-left: 280px; }
 #services {
   background: #f9f9f9;
-  color: #0e0e0e;
+  color: #242424;
+  justify-content: flex-end; /* align card to the right */
 }
+#services .section-inner { margin-right: 280px; }
 #contact {
   background: #0e0e0e;
   color: #f9f9f9;
+  justify-content: flex-start; 
+}
+#contact .section-inner { margin-left: 280px; }
+
+/* Optional: center on small screens for readability */
+@media (max-width: 768px) {
+  #about, #services, #contact {
+    justify-content: center;
+  }
+  #about .section-inner,
+  #services .section-inner,
+  #contact .section-inner {
+    margin: 0 1rem; /* keep comfortable gutters on mobile */
+  }
 }
 
 /* ======== Footer ======== */
@@ -235,6 +262,40 @@ footer {
   color: #f9f9f9;
   text-align: center;
   padding: 2rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem 1.5rem;
+}
+.footer-info a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+.footer-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-info ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* Sticky header spacing */
