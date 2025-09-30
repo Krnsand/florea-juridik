@@ -44,7 +44,7 @@ header {
   min-height: 90px; /* se till att headern alltid har höjd */
   padding: 1rem 2rem;
   display: flex;
-  background-color: #fff;
+  background-color: #f9f9f9;
   justify-content: center; /* behåll för desktop */
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -175,7 +175,7 @@ nav a.active {
   max-width: 800px;
   padding: 20px;
   text-align: center;
-  color: white;
+  color: #f1efef
 }
 .hero-content h1 {
   font-size: 55px;
@@ -185,7 +185,7 @@ nav a.active {
 }
 .hero-content p {
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
 }
 .hero-btn {
   display: inline-block;
@@ -226,20 +226,20 @@ section {
   margin-bottom: 0.5rem;
 }
 #about {
-  background: #242424;
-  color: #f9f9f9;
+  background: #292929;
+  color: #f1efef;
   justify-content: flex-start; /* align card to the left */
 }
 #about .section-inner { margin-left: 280px; }
 #services {
-  background: #f9f9f9;
+  background: #f1efef;
   color: #242424;
   justify-content: flex-end; /* align card to the right */
 }
 #services .section-inner { margin-right: 280px; }
 #contact {
-  background: #0e0e0e;
-  color: #f9f9f9;
+  background: #292929;
+  color: #f1efef;
   justify-content: flex-start; 
 }
 #contact .section-inner { margin-left: 280px; }
@@ -280,7 +280,7 @@ footer {
   gap: 1rem 1.5rem;
 }
 .footer-info a {
-  color: #f9f9f9;
+  color: #f1efef;
   text-decoration: none;
 }
 .footer-info a:hover {
