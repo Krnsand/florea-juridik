@@ -8,10 +8,22 @@ html {
   box-sizing: border-box;
 }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   line-height: 1.6;
   background: #f5f5f5;
   color: #333;
+}
+
+/* Serif headings for a trustworthy, legal feel */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 /* ======== Header ======== */
@@ -20,7 +32,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 70px; /* se till att headern alltid har höjd */
+  min-height: 90px; /* se till att headern alltid har höjd */
   padding: 1rem 2rem;
   display: flex;
   background-color: #fff;
@@ -36,16 +48,31 @@ header .logo {
   font-weight: bold;
 }
 
+/* Logo image sizing */
+header .logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+  font-family: 'Merriweather', sans-serif;
+}
+
+/* Center the nav list within the nav/header */
+nav {
+  display: flex;
+  justify-content: center;
 }
 
 nav a {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
+  font-size: 20px; /* larger nav text on desktop */
 }
 
 nav a:link,
@@ -55,7 +82,7 @@ nav a:visited {
 }
 
 nav a.active {
-  color: #000000; /* färg för aktiv länk */
+  color: #0e0e0e; /* färg för aktiv länk */
   border-bottom: 2px solid #000000;
 }
 
@@ -143,7 +170,7 @@ nav a.active {
 }
 .hero-content h1 {
   font-size: 40px;
-  font-weight: 400;
+  font-weight: 700;
   text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.6);
   margin-bottom: 20px;
 }
@@ -166,42 +193,58 @@ nav a.active {
 
 /* ======== Sektioner ======== */
 section {
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 4rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; /* default for non-wrapped content */
+}
+#about .section-inner,
+#services .section-inner,
+#contact .section-inner {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; /* center the block in the section */
+  text-align: left; /* left-align text inside */
+  display: grid;
+  gap: 1rem; /* space between title and text */
+}
+
+#about h2,
+#services h2,
+#contact h2 {
+  margin-bottom: 0.5rem;
 }
 #about {
-  background: #000;
-  color: #fff;
+  background: #0e0e0e;
+  color: #f9f9f9;
 }
 #services {
-  background: #fff;
-  color: #000;
+  background: #f9f9f9;
+  color: #0e0e0e;
 }
 #contact {
-  background: #000;
-  color: #fff;
+  background: #0e0e0e;
+  color: #f9f9f9;
 }
 
 /* ======== Footer ======== */
 footer {
-  background: #333;
-  color: #fff;
+  background: #242424;
+  color: #f9f9f9;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 /* Sticky header spacing */
 .spacer {
-  height: 70px;
+  height: 90px;
 }
 
 @media (max-width: 768px) {
   .spacer {
-    height: 70px; /* samma som header */
+    height: 90px; /* samma som header */
   }
 }
 
@@ -210,12 +253,12 @@ footer {
   header {
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    min-height: 70px;
+    min-height: 90px;
   }
 
   nav ul {
     position: absolute;
-    top: 70px;
+    top: 90px;
     right: 0;
     flex-direction: column;
     justify-content: center; /* centrerar vertikalt i menyn */
@@ -230,6 +273,10 @@ footer {
   }
   nav ul.active {
     display: flex;
+  }
+  /* Slightly smaller on mobile for fit */
+  nav a {
+    font-size: 17px;
   }
   .hamburger {
     display: flex;
