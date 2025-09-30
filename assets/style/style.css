@@ -270,7 +270,7 @@ footer {
   gap: 1.5rem 3rem;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem; /* extra space above © line */
 }
 .footer-info ul {
   list-style: none;
