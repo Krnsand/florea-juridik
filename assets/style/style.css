@@ -230,20 +230,75 @@ section {
   color: #f1efef;
   justify-content: flex-start; /* align card to the left */
 }
-#about .section-inner { margin-left: 280px; }
+#about .section-inner { margin-left: 280px; gap: 1.25rem; }
+/* Subtle lead for first paragraph in About */
+#about .section-inner p:first-of-type {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+/* Match Kontakt section to Om Mig */
+#contact {
+  background: #292929;
+  color: #f1efef;
+  justify-content: flex-start; /* align card to the left */
+}
+#contact .section-inner { margin-left: 280px; }
+/* Contact content styling */
+#contact .lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+#contact .contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+#contact .contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+#contact .contact-list li:last-child { border-bottom: none; }
+#contact .contact-list .emoji {
+  width: 1.25rem;
+  display: inline-flex;
+  justify-content: center;
+}
 #services {
   background: #f1efef;
   color: #242424;
   justify-content: flex-end; /* align card to the right */
 }
 #services .section-inner { margin-right: 280px; }
-#contact {
-  background: #292929;
-  color: #f1efef;
-  justify-content: flex-start; 
-}
-#contact .section-inner { margin-left: 280px; }
-
+/* Services list */
+  #services .services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0; /* space from intro paragraph */
+    display: grid;
+    gap: 1rem;
+  }
+  #services .service-item {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0.25rem 0; /* subtle vertical spacing */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  #services .service-item:last-child { border-bottom: none; }
+  #services .service-item h3 {
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+  }
+  #services .service-item p {
+    margin: 0;
+    color: #333;
+  }
 /* Optional: center on small screens for readability */
 @media (max-width: 768px) {
   #about, #services, #contact {
