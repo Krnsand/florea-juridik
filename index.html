@@ -47,7 +47,10 @@
   <body>
     <header>
       <a href="#hero" class="logo" aria-label="Florea Juridik">
-        <img src="./assets/images/lightmode-transp.png" alt="Florea Juridik logo" />
+        <picture>
+          <source srcset="./assets/images/darkmode-transp.png" media="(prefers-color-scheme: dark)" />
+          <img src="./assets/images/lightmode-transp.png" alt="Florea Juridik logo" />
+        </picture>
       </a>
       <nav>
         <ul>
@@ -68,7 +71,7 @@
 
     <section id="hero">
       <div class="hero-bg">
-        <img src="./assets/images/hero.jpg" alt="Hero Image" />
+        <img src="./assets/images/hero.jpg" alt="Image of a flower field with golden light coming from above" />
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -76,7 +79,7 @@
          Florea Juridik
         </h1>
         <h3>
-        För dig som vill ha hjälp med livets viktigaste relationer
+        Juridiska dokument till fasta priser
         </h3>
       </div>
     </section>
@@ -88,7 +91,7 @@
           Välkommen till en byrå med fokus på ekonomisk familjerätt. Vi hjälper dig att skapa trygghet genom juridiska dokument som står sig över tid – oavsett om det gäller samboavtal, testamente, framtidsfullmakt eller bouppteckning.
         </p>
         <p>
-          Vi vet att det kan kännas svårt att ta tag i frågor som rör framtiden. Vårt mål är att göra processen så enkel som möjligt, och ge dig tydliga råd och lösningar som fungerar i vardagen.
+          Vi vet att det kan kännas svårt att ta tag i frågor som rör framtiden. Vårt mål är att göra processen så enkel som möjligt, och ge dig tydliga råd.
         </p>
         <p>
           Genom fasta priser och möjlighet till hembesök vill vi skapa ett arbetssätt som är både förutsägbart och personligt – en byrå som möter dig där du är, på dina villkor.
@@ -108,20 +111,20 @@
         </p>
         <ul class="services-list" aria-label="Tjänster">
           <li class="service-item">
-            <h3>Testamente</h3>
-            <p>Säkerställ att din vilja gäller och att arvet fördelas på det sätt du själv bestämmer.</p>
+            <h3>Testamente <span class="price">3 900 kr</span></h3>
+            <p>Bestäm vem eller vilka som ska ärva dig.</p>
           </li>
           <li class="service-item">
-            <h3>Framtidsfullmakt</h3>
-            <p>Välj själv vem som får företräda dig om du inte längre kan fatta egna beslut.</p>
+            <h3>Framtidsfullmakt <span class="price">3 200 kr</span></h3>
+            <p>Utse en person, eller flera personer, som kan företräda dig om du i framtiden inte själv kan fatta beslut p g a exempelvis sjukdom.</p>
           </li>
           <li class="service-item">
-            <h3>Samboavtal &amp; Äktenskapsförord</h3>
-            <p>Skapa tydlighet och undvik framtida tvister kring gemensam egendom.</p>
+            <h3>Skuldebrev <span class="price">2 600 kr</span></h3>
+            <p>Ett avtal som bekräftar och reglerar en skuld mellan två parter.</p>
           </li>
           <li class="service-item">
-            <h3>Bouppteckning</h3>
-            <p>Professionell hjälp med bouppteckning efter ett dödsfall – korrekt och smidigt.</p>
+            <h3>Bouppteckning <span class="price">Pris enligt överenskommelse</span></h3>
+            <p>Efter att någon har avlidit ska en bouppteckning upprättas och ett förrättningsmöte hållas.</p>
           </li>
         </ul>
       </div>
@@ -149,11 +152,6 @@
           <li>
             telefon kommer snart
           </li>
-        </ul>
-        <ul class="socials">
-          <!-- <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li> -->
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
       <p>© 2025 Florea Juridik</p>
