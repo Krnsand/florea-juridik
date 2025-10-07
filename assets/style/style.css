@@ -50,6 +50,10 @@ nav a:visited {
   color: #333; /* standardfärg för länkar */
   text-decoration: none;
 }
+/* Active link underline (light mode/default) */
+nav a.active {
+  border-bottom: 2px solid #000;
+}
 
 /* ======== Header (restored) ======== */
 header {
@@ -463,6 +467,10 @@ footer p {
   nav a:visited {
     color: #f1efef;
   }
+  /* Active link underline in dark header */
+  nav a.active {
+    border-bottom: 2px solid #f1efef;
+  }
   /* hamburger bars become light in dark mode */
   .hamburger span {
     background: #f1efef;
@@ -472,5 +480,7 @@ footer p {
     nav ul { background-color: #f1efef; }
     nav ul a:link,
     nav ul a:visited { color: #242424; }
+    /* Active link underline inside light dropdown */
+    nav ul a.active { border-bottom: 2px solid #242424; }
   }
 }
