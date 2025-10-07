@@ -1,3 +1,12 @@
+/* ======== CSS Index ======== */
+/* 1) Base reset and typography */
+/* 2) Header, logo, nav, hamburger */
+/* 3) Hero */
+/* 4) Sections: About, Services, Contact */
+/* 5) Services list styling */
+/* 6) Footer */
+/* 7) Responsive: mobile/desktop */
+/* 8) Dark mode overrides */
 /* ======== Reset ======== */
 html {
   scroll-behavior: smooth;

@@ -1,22 +1,36 @@
+"use strict";
+
+/**
+ * Florea Juridik – UI interactions
+ * - Hamburger menu toggle
+ * - Close on outside click
+ * - Active nav link on scroll/hash
+ */
+
 // Hamburger toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector("nav ul");
 
+/** Close the mobile menu (idempotent) */
 const closeMenu = () => {
+  if (!hamburger || !navMenu) return;
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
   hamburger.setAttribute("aria-expanded", "false");
 };
 
-hamburger.addEventListener("click", (e) => {
-  e.stopPropagation();
-  const isOpen = hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-  hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-});
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+}
 
 // Close when clicking outside the menu/hamburger
 document.addEventListener("click", (e) => {
+  if (!hamburger || !navMenu) return;
   if (!navMenu.classList.contains("active")) return;
   const clickInsideMenu = navMenu.contains(e.target);
   const clickOnHamburger = hamburger.contains(e.target);
@@ -30,6 +44,7 @@ document.addEventListener("click", (e) => {
 const sections = document.querySelectorAll("section, footer[id]");
 const navLinks = document.querySelectorAll("nav a");
 
+/** Highlight active nav link based on scroll position */
 const updateActiveFromScroll = () => {
   const headerOffset = 90; // match CSS header min-height
   const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -71,7 +86,7 @@ navLinks.forEach((link) => {
   });
 });
 
-window.addEventListener("scroll", updateActiveFromScroll);
+window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
 window.addEventListener("resize", updateActiveFromScroll);
 window.addEventListener("load", updateActiveFromScroll);
 window.addEventListener("hashchange", () => {
